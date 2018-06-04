@@ -1,0 +1,392 @@
+.header {
+  padding-top: 25px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+
+  &__fixed{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    align-items: center;
+
+    @include tablets{
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
+
+  &__logo{
+    text-align: center;
+    width: 275px;
+  }
+
+  &__menu{
+
+    @include phones{
+      //display: none;
+    }
+  }
+}
+
+.container--header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 25px;
+  align-items: center;
+
+  @include tablets{
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+}
+
+.contacts{
+  display: flex;
+  width: 90%;
+
+  @include tablets{
+    width: 70%;
+  }
+
+  @include phones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__phone{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    margin-left: 25px;
+    pointer-events: none;
+
+    @include tablets{
+      pointer-events: all;
+    }
+
+    &:hover{
+      color: #fed322;
+    }
+
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url(../img/phone.png);
+      width: 14px;
+      height: 14px;
+      //top: 4px;
+      top: 0;
+      right: 140px;
+    }
+  }
+
+  &__mail{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'montserratregular';
+    position: relative;
+    margin-left: 30px;
+
+    &:hover{
+      color: #fed322;
+    }
+
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url(../img/mail.png);
+      width: 17px;
+      height: 11px;
+      //top: 6px;
+      top: 2px;
+      left: -20px;
+    }
+  }
+}
+
+.contacts__phone:hover:before{
+  background-image: url(../img/phone-hover.png);
+}
+
+.contacts__mail:hover:before{
+  background-image: url(../img/mail-hover.png);
+}
+
+.socials{
+  display: flex;
+  align-items: center;
+  width: 22%;
+
+  @include tablets{
+    width: 32%;
+    margin-top: 20px;
+  }
+
+  @include phones{
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__text{
+    color: #fff;
+    font-size: 16px;
+    font-family: 'montserratregular';
+    margin-right: 10px;
+  }
+
+  &__icons{
+    display: flex;
+  }
+
+  &__link{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+
+    &--fb{
+      display: block;
+      background-image: url(../img/fb.png);
+      width: 25px;
+      height: 25px;
+      
+      &:hover{
+        background-image: url(../img/fb--hover.png);
+      }
+    }
+
+    &--vk{
+      display: block;
+      background-image: url(../img/vk.png);
+      width: 26px;
+      height: 25px;
+      
+      &:hover{
+        background-image: url(../img/vk--hover.png);
+      }
+    }
+
+    &--inst{
+      display: block;
+      background-image: url(../img/inst.png);
+      width: 25px;
+      height: 25px;
+      
+      &:hover{
+        background-image: url(../img/inst--hover.png);
+      }
+    }
+  }
+}
+
+.nav{
+
+  &__list{
+    display: flex;
+
+    @include phones{
+      display: none;
+    }
+  }
+
+  &__link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'montserratmedium';
+    padding: 2px 10px;
+    cursor: pointer;
+
+    @include tablets{
+      font-size: 14px;
+    }
+    
+    &:hover{
+      background-color: #fed322;
+      color: #2e2e2e;
+    }
+  }
+}
+
+.logo{
+
+  &__link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 32px;
+    font-family: 'montserratsemibold';
+    position: relative;
+    padding: 0 15px;
+
+    &:before{
+      content: '-';
+      display: block;
+      position: absolute;
+    }
+
+    &:after{
+      content: '-';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__descr{
+    color: #fff;
+    font-size: 17px;
+    font-family: 'montserratregular';
+    text-transform: lowercase;
+  }
+
+  &__text{
+
+    &--dot{
+      margin-left: 15px;
+      position: relative;
+
+      &:before{
+        content: '.';
+        display: block;
+        position: absolute;
+        top: -4px;
+        left: -11px;
+      }
+    }
+  }
+}
+
+.header__fixed {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  //z-index: 9999;
+  //max-width: 1150px;
+  //margin: 0 auto;
+}
+
+.header__fixed.clone {
+  position: fixed;
+  top: -80px;
+  transition: 0.2s top ease-in;
+  background-color: #178FD6;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #fff;
+
+  @include tablets{
+    top: -90px;
+  }
+
+  &:after{
+    content: "+7 (921) 942-7670";
+    display: none;
+    position: absolute;
+    width: 140px;
+    height: 10px;
+    color: #fff;
+    top: 5px;
+
+    @include phones{
+      display: block;
+    }
+  }
+
+  &:before{
+    content: "lferma@yandex.ru";
+    display: none;
+    position: absolute;
+    width: 140px;
+    height: 10px;
+    color: #fff;
+    top: 30px;
+
+    @include phones{
+      display: block;
+    }
+  }
+
+  @include phones{
+    //display: none;
+  }
+}
+
+.header__fixed.clone .header__logo{
+  margin-left: 150px;
+
+  @include tablets{
+    display: none;
+  }
+
+  @include phones{
+    margin-left: 0;
+    display: none;
+  }
+}
+
+.header__fixed.clone .header__menu{
+  margin-right: 130px;
+
+  @include tablets{
+    margin-right: 0;
+    margin-top: 15px;
+  }
+}
+
+.header__fixed.clone .nav__link:hover{
+  background-color: transparent;
+  color: #fed322;
+}
+
+body.down .header__fixed.clone {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.hamburger{
+  display: none;
+  background-image: url(../img/hamburger.png);
+  width: 24px;
+  height: 22px;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  position: fixed;
+
+  @include phones{
+    display: flex;
+  }
+}
+
+.header__menu--modal{
+  position: absolute;
+  top: 0 !important;
+  z-index: 99;
+  width: 100%;
+  display: none;
+}
+
+.hamb_nav{
+  //display: none;
+
+  @include phones{
+    display: block;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+  }
+}
